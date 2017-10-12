@@ -101,4 +101,5 @@ class AdvertController extends Controller
     {
         return $this->render('BONBERSPlatformBundle:Advert:delete.html.twig');
     }
+   
 }
