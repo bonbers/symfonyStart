@@ -83,7 +83,18 @@ class AdvertController extends Controller
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifié');
            return $this->redirectToRoute('bonbers_platform_view', array('id' => 5));
         }
-       return $this->render('BONBERSPlatformBundle:Advert:edit.html.twig');
+        
+            $advert = array(
+           'title' => 'Recherche développeur Symfony',
+           'id'    => $id,
+           'author' => 'Alexandre',
+           'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon..',
+           'date' => new \Datetime()
+       );
+       
+       return $this->render('BONBERSPlatformBundle:Advert:edit.html.twig', array(
+           'advert' => $advert
+       ));
     }
     
     public function deleteAction($id)
