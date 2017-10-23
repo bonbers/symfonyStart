@@ -3,18 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/config/services.yml</file>
-            <file>file:/var/www/html/symfonyStart/app/config/routing_dev.yml</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/view.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Antispam/BONBERSAntispam.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/index.html.twig</file>
-            <file>file:/var/www/html/symfonyStart/app/AppCache.php</file>
-            <file>file:/var/www/html/symfonyStart/app/config/routing.yml</file>
-            <file>file:/var/www/html/symfonyStart/app/AppKernel.php</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/config/routing.yml</file>
-            <file>file:/var/www/html/symfonyStart/app/config/services.yml</file>
-            <file>file:/var/www/html/symfonyStart/app/config/config_prod.yml</file>
+            <file>file:/var/www/html/symfonyStart/app/Resources/views/layout.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/edit.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/app/config/parameters.yml</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/menu.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/config/services.yml</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/add.html.twig</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/layout.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Repository/AdvertRepository.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Controller/AdvertController.php</file>
-            <file>file:/var/www/html/symfonyStart/app/config/config.yml</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/form.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Advert.php</file>
         </group>
     </open-files>
 </project-private>
