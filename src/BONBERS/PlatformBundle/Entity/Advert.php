@@ -74,6 +74,17 @@ class Advert
      */
     private $content;
 
+    /**
+   * @ORM\ManyToMany(targetEntity="BONBERS\PlatformBundle\Entity\Category", cascade={"persist"})
+   * @ORM\JoinTable(name="oc_advert_category")
+   */
+  private $categories;
+
+  /**
+   * @ORM\OneToMany(targetEntity="BONBERS\PlatformBundle\Entity\Application", mappedBy="advert")
+   */
+  private $applications; // Notez le « s », une annonce est liée à plusieurs candidatures
+
 
     /**
      * Get id
@@ -258,9 +269,8 @@ class Advert
         return $this->slug;
     }
 
-    /**
-     * Set updatedAt
-     *
+
+     /**
      * @param \DateTime $updatedAt
      *
      * @return Advert
@@ -280,5 +290,82 @@ class Advert
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->applications = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->date = new \DateTime();
+    }
+
+    /**
+     * Add category
+     *
+     * @param \OC\PlatformBundle\Entity\Category $category
+     *
+     * @return Advert
+     */
+    public function addCategory(\BONBERS\PlatformBundle\Entity\Category $category)
+    {
+        $this->categories[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \OC\PlatformBundle\Entity\Category $category
+     */
+    public function removeCategory(\BONBERS\PlatformBundle\Entity\Category $category)
+    {
+        $this->categories->removeElement($category);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Add application
+     *
+     * @param \OC\PlatformBundle\Entity\Application $application
+     *
+     * @return Advert
+     */
+    public function addApplication(\BONBERS\PlatformBundle\Entity\Application $application)
+    {
+        $this->applications[] = $application;
+
+        return $this;
+    }
+
+    /**
+     * Remove application
+     *
+     * @param \OC\PlatformBundle\Entity\Application $application
+     */
+    public function removeApplication(\BONBERS\PlatformBundle\Entity\Application $application)
+    {
+        $this->applications->removeElement($application);
+    }
+
+    /**
+     * Get applications
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getApplications()
+    {
+        return $this->applications;
     }
 }

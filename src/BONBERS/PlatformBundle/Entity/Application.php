@@ -42,6 +42,11 @@ class Application
      */
     private $date;
 
+      /**
+   * @ORM\ManyToOne(targetEntity="BONBERS\PlatformBundle\Entity\Advert", inversedBy="applications")
+   * @ORM\JoinColumn(nullable=false)
+   */
+  private $advert;
 
     /**
      * Get id
@@ -123,5 +128,29 @@ class Application
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set advert
+     *
+     * @param \BONBERS\PlatformBundle\Entity\Advert $advert
+     *
+     * @return Application
+     */
+    public function setAdvert(\BONBERS\PlatformBundle\Entity\Advert $advert)
+    {
+        $this->advert = $advert;
+
+        return $this;
+    }
+
+    /**
+     * Get advert
+     *
+     * @return \BONBERS\PlatformBundle\Entity\Advert
+     */
+    public function getAdvert()
+    {
+        return $this->advert;
     }
 }

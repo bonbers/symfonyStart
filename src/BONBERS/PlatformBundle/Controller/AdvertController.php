@@ -6,26 +6,26 @@ use BONBERS\PlatformBundle\Entity\Advert;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use BONBERS\PlatformBundle\Form\AdvertType;
 
 class AdvertController extends Controller
 {
-    
+   
     public function indexAction($page)
     {
               if ($page < 1 ) {
-           throw new NotFoundHttpException('Page"'.$page.'"inexistante.');
+           throw new NotFoundHttpException("Page ".$page." inexistante.");
        }
        
        // On fixe le nombre d'annonces par page à 3
        $nbPerPage = 3;
-       
-       // On récupère la liste de toute les annonces avec findAll()
-       
-        $listAdverts = $this->getDoctrine()
-                ->getManager()
-                ->getRepository('BONBERSPlatformBundle:Advert')
-                ->getAdverts()
-                ;
        
        // On récupère notre objet Paginator
        $listAdverts = $this->getDoctrine()
@@ -38,7 +38,7 @@ class AdvertController extends Controller
        $nbPages = ceil(count($listAdverts) / $nbPerPage);
        
        // Si la page n'existe pas, on retourne une 404
-       if ($page -> $nbPages) {
+       if ($page>$nbPages) {
            throw $this->createNotFoundException("La page ".$page." n'existe pas");
        }
       
@@ -85,7 +85,7 @@ class AdvertController extends Controller
     
     public function menuAction($limit)
     {
-        $em = $this->getDoctrine->getManager();
+        $em = $this->getDoctrine()->getManager();
        
         $listAdverts = $em->getRepository('BONBERSPlatformBundle:Advert')->findBy(
                 array(),                           // Pas de critère
@@ -100,13 +100,31 @@ class AdvertController extends Controller
     }
     public function addAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         
-        if ($request->isMethod('POST')) {
-            $request->getSession()->getFlashBag()->add('notice','Annonce bien enregistrée.');
-            return $this->redirectToRoute('bonbers_platform_view', array('id' => $advert->getId()));
-        }
-        return $this->render('BONBERSPlatformBundle:Advert:add.html.twig');
+        // On crée un objet Advert
+        $advert = new Advert();
+        
+        // Ce dont le formulaire sera composé 
+        $form = $this->get('form.factory')->create(AdvertType::class, $advert);
+        
+        // Si la requête est de type POST
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            // On fait le lien Requête <-> Formulaire
+            // La variable $Advert contient maintenant les valeurs entrées dans le formulaire par le visiteur
+            
+                // On enregistre notre objet $advert dans le base de données
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($advert);
+                $em->flush();
+                
+                  $request->getSession()->getFlashBag()->add('notice','Annonce bien enregistrée.');
+                  
+                  // On redirige vers la page de visualisation de l'annonce créée
+                  return $this->redirectToRoute('bonbers_platform_view', array('id' => $advert->getId()));
+            } 
+        return $this->render('BONBERSPlatformBundle:Advert:add.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
     public function editAction($id, Request $request)
