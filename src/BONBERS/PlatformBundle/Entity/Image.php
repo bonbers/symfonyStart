@@ -4,6 +4,7 @@ namespace BONBERS\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="oc_image")
@@ -30,7 +31,8 @@ class Image
   private $alt;
 
   /**
-   * @var UploadedFile
+   * @Assert\Valid()
+   * @Assert\File(maxSize="5M", maxSizeMessage="Votre image est trop grande. La taille maximum est de {{ limit }} Mo. ")
    */
   private $file;
 

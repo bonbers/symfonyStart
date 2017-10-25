@@ -13,6 +13,7 @@ class AdvertController extends Controller
 {
   public function indexAction($page)
   {
+      // Avec le \d+ actuellement inutilisé !
     if ($page < 1) {
       return $this->render('BONBERSPlatformBundle:Advert:no_advert.html.twig');
     }

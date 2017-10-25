@@ -5,6 +5,8 @@ namespace BONBERS\PlatformBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Advert
@@ -12,6 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(name="advert")
  * @ORM\Entity(repositoryClass="BONBERS\PlatformBundle\Repository\AdvertRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity(fields="title", message="Une annonce existe déjà avec ce titre.")
  */
 class Advert
 {
@@ -28,6 +31,7 @@ class Advert
    * @var \DateTime
    *
    * @ORM\Column(name="date", type="datetime")
+   * @Assert\DateTime()
    */
   private $date;
 
@@ -35,6 +39,7 @@ class Advert
    * @var string
    *
    * @ORM\Column(name="title", type="string", length=255)
+   * @Assert\Length(min=10)
    */
   private $title;
 
@@ -42,6 +47,7 @@ class Advert
    * @var string
    *
    * @ORM\Column(name="author", type="string", length=255)
+   * @Assert\Length(min=2)
    */
   private $author;
 
@@ -49,6 +55,7 @@ class Advert
    * @var string
    *
    * @ORM\Column(name="content", type="string", length=255)
+   * @Assert\NotBlank()
    */
   private $content;
 
@@ -59,6 +66,7 @@ class Advert
 
   /**
    * @ORM\OneToOne(targetEntity="BONBERS\PlatformBundle\Entity\Image", cascade={"persist", "remove"})
+   * @Assert\Valid()
    */
   private $image;
 
