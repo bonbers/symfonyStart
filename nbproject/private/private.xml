@@ -7,6 +7,7 @@
             <file>file:/var/www/html/symfonyStart/app/config/routing_dev.yml</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Category.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/index.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/no_advert.html.twig</file>
             <file>file:/var/www/html/symfonyStart/app/Resources/views/layout.html.twig</file>
             <file>file:/var/www/html/symfonyStart/app/config/routing.yml</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/config/routing.yml</file>

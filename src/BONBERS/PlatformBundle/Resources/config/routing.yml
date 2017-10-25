@@ -1,6 +1,4 @@
-#hello_the_world:
-#    path:    /hello-world
-#    defaults: { _controller: BONBERSPlatformBundle:Advert:index }
+# src/OC/PlatformBundle/Resources/config/routing.yml
 
 bonbers_platform_home:
     path:      /{page}
@@ -8,38 +6,30 @@ bonbers_platform_home:
         _controller: BONBERSPlatformBundle:Advert:index
         page: 1
     requirements:
-        page: \d*
-
+        page: \d+
+    
 bonbers_platform_view:
-    path:    /advert/{id}
-    defaults: { _controller: BONBERSPlatformBundle:Advert:view }
+    path:      /advert/{id}
+    defaults:
+        _controller: BONBERSPlatformBundle:Advert:view
     requirements:
         id: \d+
 
 bonbers_platform_add:
-    path:    /add
-    defaults: { _controller: BONBERSPlatformBundle:Advert:add }
+    path:      /add
+    defaults:
+        _controller: BONBERSPlatformBundle:Advert:add
 
 bonbers_platform_edit:
-    path:    /edit/{id}
-    defaults: { _controller: BONBERSPlatformBundle:Advert:edit }
+    path:      /edit/{id}
+    defaults:
+        _controller: BONBERSPlatformBundle:Advert:edit
     requirements:
         id: \d+
 
 bonbers_platform_delete:
-    path:    /delete/{id}
-    defaults: { _controller: BONBERSPlatformBundle:Advert:delete }
+    path:      /delete/{id}
+    defaults:
+        _controller: BONBERSPlatformBundle:Advert:delete
     requirements:
         id: \d+
-
-
-
-#Exemple de route avec contraintes et paramètres
-
-#bonbers_platform_slug:
-#    path:    /{year}/{slug}.{_format}
-#    defaults:
-#        { _controller: BONBERSPlatformBundle:Advert:viewSlug, format: html }
-#    requirements:
-#        year:    \d{4}
-#        format: html|xml

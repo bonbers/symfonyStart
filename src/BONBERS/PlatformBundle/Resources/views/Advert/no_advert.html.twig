@@ -1,0 +1,12 @@
+{% extends "BONBERSPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block bonbers_platform_body %}
+
+  <h2>Aucune annonce !</h2>
+
+  <a href={{ path('bonbers_platform_add') }}>Ajouter une annonce !</a>
+{% endblock %}
