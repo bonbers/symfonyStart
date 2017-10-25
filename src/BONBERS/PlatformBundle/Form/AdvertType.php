@@ -15,13 +15,14 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class AdvertType extends AbstractType
 {
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     // Arbitrairement, on récupère toutes les catégories qui commencent par "D"
-    $pattern = 'D%';
+//    $pattern = 'D%';
 
     $builder
       ->add('date',      DateTimeType::class)
@@ -29,10 +30,13 @@ class AdvertType extends AbstractType
       ->add('author',    TextType::class)
       ->add('content',   TextareaType::class)
       ->add('image',     ImageType::class)
-      ->add('categories', CollectionType::class, array(
-      'entry_type'   => CategoryType::class,
-        'allow_add'    => true,
-        'allow_delete' => true
+      ->add('categories', EntityType::class, array(
+        'class'         => 'BONBERSPlatformBundle:Category',
+        'choice_label'  => 'name',
+        'multiple'      => true,
+//        'query_builder' => function(CategoryRepository $repository) use($pattern) {
+//          return $repository->getLikeQueryBuilder($pattern);
+//        }
       ))
       ->add('save',      SubmitType::class)
     ;

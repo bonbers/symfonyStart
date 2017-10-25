@@ -31,7 +31,6 @@ class Image
   private $alt;
 
   /**
-   * @Assert\Valid()
    * @Assert\File(maxSize="5M", maxSizeMessage="Votre image est trop grande. La taille maximum est de {{ limit }} Mo. ")
    */
   private $file;

@@ -15,11 +15,11 @@ class __TwigTemplate_23c2035c141c74af856c64ada418a70ad77f768bb3fa9a73b9bb2f028b1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4e9f8514e4b46712e388a3352ede6dc2b44815bf57a3bb0f9aeee575e8eacc84 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4e9f8514e4b46712e388a3352ede6dc2b44815bf57a3bb0f9aeee575e8eacc84->enter($__internal_4e9f8514e4b46712e388a3352ede6dc2b44815bf57a3bb0f9aeee575e8eacc84_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BONBERSPlatformBundle:Advert:form.html.twig"));
+        $__internal_bed7001a1e1b51c51c631b3f4bbc2d5441021c1a86a3f9888607b96b39287cc3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bed7001a1e1b51c51c631b3f4bbc2d5441021c1a86a3f9888607b96b39287cc3->enter($__internal_bed7001a1e1b51c51c631b3f4bbc2d5441021c1a86a3f9888607b96b39287cc3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BONBERSPlatformBundle:Advert:form.html.twig"));
 
-        $__internal_1114f44337c4d33e57bb9318d08b4f6e02c016a71c8aaee151ba693d29a4c257 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1114f44337c4d33e57bb9318d08b4f6e02c016a71c8aaee151ba693d29a4c257->enter($__internal_1114f44337c4d33e57bb9318d08b4f6e02c016a71c8aaee151ba693d29a4c257_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BONBERSPlatformBundle:Advert:form.html.twig"));
+        $__internal_c07e9ba6c1e0ecdd743cefb6a05e6c8d3c04468f3d248c997d065930cce7eb1a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c07e9ba6c1e0ecdd743cefb6a05e6c8d3c04468f3d248c997d065930cce7eb1a->enter($__internal_c07e9ba6c1e0ecdd743cefb6a05e6c8d3c04468f3d248c997d065930cce7eb1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BONBERSPlatformBundle:Advert:form.html.twig"));
 
         // line 1
         echo "<h3>Formulaire d'annonce</h3>
@@ -141,80 +141,11 @@ class __TwigTemplate_23c2035c141c74af856c64ada418a70ad77f768bb3fa9a73b9bb2f028b1
         echo "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
 ";
-        // line 64
-        echo "<script type=\"text/javascript\">
-  \$(document).ready(function() {
-    // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
-    var \$container = \$('div#advert_categories');
-
-    // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
-    var index = \$container.find(':input').length;
-
-    // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
-    \$('#add_category').click(function(e) {
-      addCategory(\$container);
-
-      e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-      return false;
-    });
-
-    // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
-    if (index == 0) {
-      addCategory(\$container);
-    } else {
-      // S'il existe déjà des catégories, on ajoute un lien de suppression pour chacune d'entre elles
-      \$container.children('div').each(function() {
-        addDeleteLink(\$(this));
-      });
-    }
-
-    // La fonction qui ajoute un formulaire CategoryType
-    function addCategory(\$container) {
-      // Dans le contenu de l'attribut « data-prototype », on remplace :
-      // - le texte \"__name__label__\" qu'il contient par le label du champ
-      // - le texte \"__name__\" qu'il contient par le numéro du champ
-      var template = \$container.attr('data-prototype')
-        .replace(/__name__label__/g, 'Catégorie n°' + (index+1))
-        .replace(/__name__/g,        index)
-      ;
-
-      // On crée un objet jquery qui contient ce template
-      var \$prototype = \$(template);
-
-      // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
-      addDeleteLink(\$prototype);
-
-      // On ajoute le prototype modifié à la fin de la balise <div>
-      \$container.append(\$prototype);
-
-      // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
-      index++;
-    }
-
-    // La fonction qui ajoute un lien de suppression d'une catégorie
-    function addDeleteLink(\$prototype) {
-      // Création du lien
-      var \$deleteLink = \$('<a href=\"#\" class=\"btn btn-danger\">Supprimer</a>');
-
-      // Ajout du lien
-      \$prototype.append(\$deleteLink);
-
-      // Ajout du listener sur le clic du lien pour effectivement supprimer la catégorie
-      \$deleteLink.click(function(e) {
-        \$prototype.remove();
-
-        e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-        return false;
-      });
-    }
-  });
-</script>
-";
         
-        $__internal_4e9f8514e4b46712e388a3352ede6dc2b44815bf57a3bb0f9aeee575e8eacc84->leave($__internal_4e9f8514e4b46712e388a3352ede6dc2b44815bf57a3bb0f9aeee575e8eacc84_prof);
+        $__internal_bed7001a1e1b51c51c631b3f4bbc2d5441021c1a86a3f9888607b96b39287cc3->leave($__internal_bed7001a1e1b51c51c631b3f4bbc2d5441021c1a86a3f9888607b96b39287cc3_prof);
 
         
-        $__internal_1114f44337c4d33e57bb9318d08b4f6e02c016a71c8aaee151ba693d29a4c257->leave($__internal_1114f44337c4d33e57bb9318d08b4f6e02c016a71c8aaee151ba693d29a4c257_prof);
+        $__internal_c07e9ba6c1e0ecdd743cefb6a05e6c8d3c04468f3d248c997d065930cce7eb1a->leave($__internal_c07e9ba6c1e0ecdd743cefb6a05e6c8d3c04468f3d248c997d065930cce7eb1a_prof);
 
     }
 
@@ -230,7 +161,7 @@ class __TwigTemplate_23c2035c141c74af856c64ada418a70ad77f768bb3fa9a73b9bb2f028b1
 
     public function getDebugInfo()
     {
-        return array (  145 => 64,  141 => 61,  134 => 56,  128 => 53,  122 => 48,  117 => 45,  112 => 43,  109 => 42,  103 => 40,  101 => 39,  96 => 37,  89 => 33,  84 => 31,  80 => 30,  77 => 29,  69 => 24,  62 => 20,  56 => 17,  53 => 15,  50 => 13,  44 => 11,  41 => 10,  35 => 7,  30 => 4,  25 => 1,);
+        return array (  141 => 61,  134 => 56,  128 => 53,  122 => 48,  117 => 45,  112 => 43,  109 => 42,  103 => 40,  101 => 39,  96 => 37,  89 => 33,  84 => 31,  80 => 30,  77 => 29,  69 => 24,  62 => 20,  56 => 17,  53 => 15,  50 => 13,  44 => 11,  41 => 10,  35 => 7,  30 => 4,  25 => 1,);
     }
 
     public function getSourceContext()
@@ -297,7 +228,7 @@ class __TwigTemplate_23c2035c141c74af856c64ada418a70ad77f768bb3fa9a73b9bb2f028b1
    mais si vous l'avez en local, changez simplement l'adresse. #}
 <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
-{# Voici le script en question : #}
+{# Voici le script en question : 
 <script type=\"text/javascript\">
   \$(document).ready(function() {
     // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
@@ -364,7 +295,7 @@ class __TwigTemplate_23c2035c141c74af856c64ada418a70ad77f768bb3fa9a73b9bb2f028b1
       });
     }
   });
-</script>
+</script>#}
 ", "BONBERSPlatformBundle:Advert:form.html.twig", "/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/form.html.twig");
     }
 }

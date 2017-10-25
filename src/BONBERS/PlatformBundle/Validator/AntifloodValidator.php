@@ -11,7 +11,7 @@ class AntifloodValidator extends ConstraintValidator
     {
         // Flood tout message de moins de 3 caractères
         if (strlen($value) <3) {
-            // Déclenchement de l'erreur pour le formulaire, avec en argument le message de la contrainte
+            // Déclenchement de l'erreur pour le formulaire, avec en argument le message de la contrainte.
             $this->context->addViolation($contraint->message);
         }
     }

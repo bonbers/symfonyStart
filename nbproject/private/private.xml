@@ -4,20 +4,26 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/view.html.twig</file>
-            <file>file:/var/www/html/symfonyStart/app/config/routing_dev.yml</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Category.php</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/index.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Skill.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Form/ImageType.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/no_advert.html.twig</file>
-            <file>file:/var/www/html/symfonyStart/app/Resources/views/layout.html.twig</file>
-            <file>file:/var/www/html/symfonyStart/app/config/routing.yml</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/config/routing.yml</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/menu.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Category.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/AdvertSkill.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Repository/ImageRepository.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/DataFixtures/ORM/LoadCategory.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Repository/CategoryRepository.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Form/CategoryType.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Form/AdvertType.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/edit.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Validator/Antiflood.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Image.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Repository/AdvertSkillRepository.php</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Repository/AdvertRepository.php</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/layout.html.twig</file>
-            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/add.html.twig</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Form/AdvertEditType.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/DataFixtures/ORM/LoadSkill.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Validator/AntifloodValidator.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Controller/AdvertController.php</file>
             <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Entity/Advert.php</file>
+            <file>file:/var/www/html/symfonyStart/src/BONBERS/PlatformBundle/Resources/views/Advert/form.html.twig</file>
         </group>
     </open-files>
 </project-private>
